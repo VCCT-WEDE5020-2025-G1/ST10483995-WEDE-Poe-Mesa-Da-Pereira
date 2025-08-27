@@ -1,11 +1,11 @@
 # Mesa Da Pereira
 
 ## Student information
-Student Number: ST10483995
-Name: Lipalesa Lethole
-Module: WEDE5020
-Subject: Portfolio of Evidence (POE)
-Github Repository: 
+- Student Number: ST10483995
+- Name: Lipalesa Lethole
+- Module: WEDE5020
+- Subject: Portfolio of Evidence (POE)
+- Github Repository: 
 
 ## Description
 This website for Mesa Da Pereira is designed to give potential customers information on the website.
