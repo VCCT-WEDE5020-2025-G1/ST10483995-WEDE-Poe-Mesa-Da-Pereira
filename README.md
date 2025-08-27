@@ -5,7 +5,7 @@
 - Name: Lipalesa Lethole
 - Module: WEDE5020
 - Subject: Portfolio of Evidence (POE)
-- Github Repository: https://github.com/ST10483995/ST10483995-WEDE-Poe-Mesa-Da-Pereira
+- Github Repository: https://github.com/VCCT-WEDE5020-2025-G1/ST10483995-WEDE-Poe-Mesa-Da-Pereira
 
 ## Description
 This website for Mesa Da Pereira is designed to give potential customers information on the website.
