@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+     <!--Header of the website-->
     <header>
         <h1>Contact Us</h1>
         
+        <!--Website navigation-->
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
@@ -20,35 +23,44 @@
         </nav>
     </header>
     <main>
+        <!--Contact information and form-->
+        <section class="contact-section">
         <section>
             <h2>Get in Touch</h2>
             <p>We would love to hear from you! Below are both our contact details and a form for us to get into contact with you.</p>
-        </section>
 
-        <section class="contact-section">
-            <h3>Contact Details</h3>
+            <!--The restaurant's contact details-->
+            <h3>Our Contact Details</h3>
             <p>
-                MesaDaPereira@gmail.com
-                <br>
-                +44 1234 567890
-                <br>
-                34 Shelduck Crescent, Cape Town, South Africa
+                <li>072 644 9745</li>
+                <li>mesadapereira@gmail.com</li>
+                <li>(insert address here)</li>
             </p>
-            </section>
 
-        <section class="contact-input">
+            <!--The user can input their contact details-->
             <h3>Your Details</h3>
-
+            <p>
             <input type="text" id="name" name="name" placeholder="Your Name(s)" required>
             <input type="text" id="surname" name="surname" placeholder="Your Surname(s)" required>
             <input type="email" id="email" name="email" placeholder="Your Email Address" required>
             <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
             <input type="text" id="subject" name="subject" placeholder="Subject of Your Message" required>
             <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
-            
-            <button type="submit">Submit</button>
+            </p>
+        </section>
+
+        <!--Button to submit their details-->
+        <section>
+            <button type="submit" onclick="alert('Thank you for reaching out to us! We will get back to you shortly.')">Submit</button>
+        </section>
+
+        <!--Google Maps embed showing the restaurant's location-->
+        <section class="map-section">
+            <h2>Find Us Here</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.1234567890123!2d-118.12345678901234!3d34.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b1234567890%3A0x1234567890abcdef!2sMesa%20Da%20Pereira!5e0!3m2!1sen!2sus!4v1700000000000" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     </main>
+    <!--Footer of the website-->
     <footer>
         <p>&copy; 2025 Mesa Da Pereira. All rights reserved.</p>
         <p>Follow us on:
