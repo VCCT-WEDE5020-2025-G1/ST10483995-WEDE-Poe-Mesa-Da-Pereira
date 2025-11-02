@@ -50,8 +50,22 @@ The first part of this POE building:
 - Research and sourcing for the content and media
 - Creating a sitemap
 
+## Part 2 Details
+- Fix the already existing CSS and improve it
+- Add new components to make the website more aesthetically pleasing
+- Making sure that the website layout/formatting is adaptable across various devices
+- Adding more complex CSS while ensuring it does not diminish accessibility
+
 ## Sitemap
 <img width="1024" height="768" alt="WEDE Sitemap" src="https://github.com/user-attachments/assets/06b94815-8d6e-4362-bf2e-f4f1fe421d23" />
+
+## Device Adaptability
+
+The following images are two screenshots of two pages from the website. The pages are the Equiry Page and the Menu page to show an entry form and an image will be viewed on a smaller device.
+<img width="1853" height="1005" alt="WEDE Pt2 scr" src="https://github.com/user-attachments/assets/838abaf0-4b53-4ac0-9ab9-e8a8632add8e" />
+
+<img width="1745" height="1013" alt="WEDE pt2 scr2" src="https://github.com/user-attachments/assets/9504eca5-9e61-44ca-8f09-008c37200547" />
+
 
 ## References
 GoDaddy (2024). Web Hosting | Lightning Fast Hosting & One Click Setup - GoDaddy PH. [online] GoDaddy. Available at: (GoDaddy, 2024) https://www.godaddy.com/en-ph/hosting/web-hosting
@@ -62,5 +76,6 @@ Lethole, L., 2025. Food4.
 Lethole, L., 2025. Food5. 
 Lethole, L., 2025. Food6. 
 Lethole, L., 2025. Food7.
-Lethole, L., 2025. MenuImageRoungh.  
+Lethole, L., 2025. MenuImageRoungh.
+hw project. (n.d.). Canva. Canva. Retrieved September 29, 2025, from https://www.canva.com/s/templates?query=menu&adj=eyJEIjp7IkEiOiJDbGFzc3kiLCJCIjoiU1RZTEVfQ0xBU1NZIn19
 ![Uploading WEDE Sitemap.png…]()
