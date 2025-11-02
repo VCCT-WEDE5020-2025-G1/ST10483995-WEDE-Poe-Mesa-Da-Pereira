@@ -10,8 +10,9 @@
 
      <!--Header of the website-->
     <header>
+    <div class="header-inner">
         <h1>Gallery</h1>
-        
+
         <!--Website navigation-->
         <nav>
             <a href="index.html">Home</a>
@@ -21,23 +22,42 @@
             <a href="gallery.html">Gallery</a>
             <a href="menu.html">Menu</a>
         </nav>
-    </header>
+
+        <!-- Search form -->
+        <form id="search-form" class="search-form" role="search" aria-label="Site search">
+            <label for="search-input" class="sr-only">Search site</label>
+            <input id="search-input" type="search" name="q" placeholder="Search site..." aria-label="Search">
+            <button type="submit" aria-label="Submit search">Search</button>
+        </form>
+    </div>
+</header>
     <main>
 
         <!--Gallery of images-->
         <section class="gallery">
             <h2>Our Gallery</h2>
             <div class="gallery-grid">
-                <img src="images/Food1.jpg" alt="Gallery Image 1">
-                <img src="images/Food2.jpg" alt="Gallery Image 2">
-                <img src="images/Food3.jpg" alt="Gallery Image 3">
-                <img src="images/Food4.jpg" alt="Gallery Image 4">
-                <img src="images/Food5.jpg" alt="Gallery Image 5">
-                <img src="images/Food6.jpg" alt="Gallery Image 6">
-                <img src="images/Food7.jpg" alt="Gallery Image 7">
+                <!-- Added data-index attributes for navigation -->
+                <img src="images/Food1.jpg" alt="Gallery Image 1" class="lightbox-thumb" data-index="0">
+                <img src="images/Food2.jpg" alt="Gallery Image 2" class="lightbox-thumb" data-index="1">
+                <img src="images/Food3.jpg" alt="Gallery Image 3" class="lightbox-thumb" data-index="2">
+                <img src="images/Food4.jpg" alt="Gallery Image 4" class="lightbox-thumb" data-index="3">
+                <img src="images/Food5.jpg" alt="Gallery Image 5" class="lightbox-thumb" data-index="4">
+                <img src="images/Food6.jpg" alt="Gallery Image 6" class="lightbox-thumb" data-index="5">
+                <img src="images/Food7.jpg" alt="Gallery Image 7" class="lightbox-thumb" data-index="6">
             </div>
         </section>
     </main>
+
+    <!-- Lightbox overlay markup (added) -->
+    <div id="lightbox" class="lightbox-overlay" aria-hidden="true" role="dialog" aria-label="Image lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close (Esc)">✕</button>
+            <button class="lightbox-prev" aria-label="Previous (Left Arrow)">◀</button>
+            <img src="" alt="" id="lightbox-img">
+            <button class="lightbox-next" aria-label="Next (Right Arrow)">▶</button>
+        </div>
+    </div>
 
      <!--Footer of the website-->
     <footer>
@@ -48,5 +68,107 @@
             <a href="https://www.twitter.com/MesaDaPereira">Twitter</a>
         </p>
     </footer>
+
+    <!-- Lightbox script (added) -->
+    <script>
+        (function() {
+            const thumbs = Array.from(document.querySelectorAll('.lightbox-thumb'));
+            const overlay = document.getElementById('lightbox');
+            const imgEl = document.getElementById('lightbox-img');
+            const btnClose = overlay.querySelector('.lightbox-close');
+            const btnPrev = overlay.querySelector('.lightbox-prev');
+            const btnNext = overlay.querySelector('.lightbox-next');
+            let currentIndex = -1;
+
+            function open(index) {
+                const thumb = thumbs[index];
+                if (!thumb) return;
+                currentIndex = index;
+                imgEl.src = thumb.src; // uses same source; if you have larger images, use a data-large attribute
+                imgEl.alt = thumb.alt || '';
+                overlay.classList.add('open');
+                overlay.setAttribute('aria-hidden','false');
+                document.body.style.overflow = 'hidden';
+                // focus for accessibility
+                btnClose.focus();
+            }
+
+            function close() {
+                overlay.classList.remove('open');
+                overlay.setAttribute('aria-hidden','true');
+                document.body.style.overflow = '';
+                currentIndex = -1;
+                imgEl.src = '';
+            }
+
+            function showNext(delta = 1) {
+                if (thumbs.length === 0) return;
+                currentIndex = (currentIndex + delta + thumbs.length) % thumbs.length;
+                imgEl.src = thumbs[currentIndex].src;
+                imgEl.alt = thumbs[currentIndex].alt || '';
+            }
+
+            // Attach click handlers
+            thumbs.forEach((t, i) => {
+                t.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    open(i);
+                });
+                // allow keyboard access on thumbnails
+                t.setAttribute('tabindex', '0');
+                t.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); }
+                });
+            });
+
+            // Buttons
+            btnClose.addEventListener('click', close);
+            btnPrev.addEventListener('click', () => showNext(-1));
+            btnNext.addEventListener('click', () => showNext(1));
+
+            // Close when clicking outside image
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) close();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (overlay.classList.contains('open')) {
+                    if (e.key === 'Escape') close();
+                    else if (e.key === 'ArrowRight') showNext(1);
+                    else if (e.key === 'ArrowLeft') showNext(-1);
+                }
+            });
+        })();
+    </script>
+
+    <!-- Search script -->
+    <script>
+(function() {
+    const form = document.getElementById('search-form');
+    const input = document.getElementById('search-input');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const q = (input.value || '').trim().toLowerCase();
+        if (!q) return;
+        const navLinks = Array.from(document.querySelectorAll('nav a'));
+        const linkMatch = navLinks.find(a => a.textContent.toLowerCase().includes(q) || (a.getAttribute('href') || '').toLowerCase().includes(q));
+        if (linkMatch) { window.location.href = linkMatch.href; return; }
+        const content = Array.from(document.querySelectorAll('main h1, main h2, main h3, main p, header h1, footer p'));
+        const nodeMatch = content.find(n => (n.textContent || '').toLowerCase().includes(q));
+        if (nodeMatch) {
+            nodeMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const orig = nodeMatch.style.backgroundColor;
+            nodeMatch.style.transition = 'background-color 0.3s';
+            nodeMatch.style.backgroundColor = '#fff3a7';
+            setTimeout(() => nodeMatch.style.backgroundColor = orig, 1200);
+            return;
+        }
+        alert('No results found. Try different keywords.');
+    });
+})();
+</script>
+
 </body>
 </html>

@@ -10,17 +10,32 @@
     
     <!--Header of the website-->
     <header>
-        <h1>Mesa Da Pereira</h1>
-        
-        <!--Website navigation-->
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-            <a href="enquiries.html">Enquiries</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="menu.html">Menu</a>
-        </nav>
+    <div class="header-inner">
+        <!-- Title on its own row -->
+        <div class="header-top">
+            <h1>Mesa Da Pereira</h1>
+        </div>
+
+        <!-- Navigation and search in a single row -->
+        <div class="header-row">
+            <!--Website navigation-->
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="enquiries.html">Enquiries</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="menu.html">Menu</a>
+            </nav>
+
+            <!-- Search form -->
+            <form id="search-form" class="search-form" role="search" aria-label="Site search">
+                <label for="search-input" class="sr-only">Search site</label>
+                <input id="search-input" type="search" name="q" placeholder="Search site..." aria-label="Search">
+                <button type="submit" aria-label="Submit search">Search</button>
+            </form>
+        </div>
+    </div>
     </header>
     <main>
 
@@ -63,5 +78,37 @@
             <a href="https://www.twitter.com/MesaDaPereira">Twitter</a>
         </p>
     </footer>
+
+    <script>
+(function() {
+    const form = document.getElementById('search-form');
+    const input = document.getElementById('search-input');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const q = (input.value || '').trim().toLowerCase();
+        if (!q) return;
+        // 1) try nav links
+        const navLinks = Array.from(document.querySelectorAll('nav a'));
+        const linkMatch = navLinks.find(a => a.textContent.toLowerCase().includes(q) || (a.getAttribute('href') || '').toLowerCase().includes(q));
+        if (linkMatch) { window.location.href = linkMatch.href; return; }
+        // 2) try page content headings / paragraphs
+        const content = Array.from(document.querySelectorAll('main h1, main h2, main h3, main p, header h1, footer p'));
+        const nodeMatch = content.find(n => (n.textContent || '').toLowerCase().includes(q));
+        if (nodeMatch) {
+            nodeMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const orig = nodeMatch.style.backgroundColor;
+            nodeMatch.style.transition = 'background-color 0.3s';
+            nodeMatch.style.backgroundColor = '#fff3a7';
+            setTimeout(() => nodeMatch.style.backgroundColor = orig, 1200);
+            return;
+        }
+        // fallback
+        alert('No results found. Try different keywords.');
+    });
+})();
+</script>
+    <!-- include validation script before the closing body tag -->
+    <script src="validation.js"></script>
 </body>
 </html>
