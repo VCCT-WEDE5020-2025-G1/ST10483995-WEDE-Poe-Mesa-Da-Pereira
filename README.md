@@ -34,10 +34,6 @@ The key features of the website were designed to be simple; these features inclu
     ```bash
     cd your-repo
     ```
-3. Install dependencies:
-    ```bash
-    npm install
-    ```
 
 ## Timeline and Milestones
 The project is estimated to take 8 weeks to complete and for it to be ready to launch.
@@ -55,6 +51,15 @@ The first part of this POE building:
 - Add new components to make the website more aesthetically pleasing
 - Making sure that the website layout/formatting is adaptable across various devices
 - Adding more complex CSS while ensuring it does not diminish accessibility
+
+## Part 3 Details
+- Working through Part 2 feedback
+- Functionality (JavaScript Enhancements)
+- Search Engine Optimisation (SEO)
+- Form Functionality and Validation
+
+### Changes Made in Part 3
+- 
 
 ## Sitemap
 <img width="1024" height="768" alt="WEDE Sitemap" src="https://github.com/user-attachments/assets/06b94815-8d6e-4362-bf2e-f4f1fe421d23" />
