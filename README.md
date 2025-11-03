@@ -59,7 +59,13 @@ The first part of this POE building:
 - Form Functionality and Validation
 
 ### Changes Made in Part 3
-- 
+- Adding a lightbox to the images in the gallery page
+- Integrating a search bar in the header of two pages
+- Making sure that the form had the proper validations when filled in
+- Fixing the form input boxes to stay within the card when the screen size is changed
+- Created a validations.js file to put in the script for the for validations
+- Ensured that all the images in the website had the proper alt text to them in case then don't show/load
+- Adding the proper meta/SEO tags in the index.html file e.g. meta description, tags, and keywords
 
 ## Sitemap
 <img width="1024" height="768" alt="WEDE Sitemap" src="https://github.com/user-attachments/assets/06b94815-8d6e-4362-bf2e-f4f1fe421d23" />
