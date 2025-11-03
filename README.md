@@ -79,14 +79,14 @@ The following images are two screenshots of two pages from the website. The page
 
 
 ## References
-GoDaddy (2024). Web Hosting | Lightning Fast Hosting & One Click Setup - GoDaddy PH. [online] GoDaddy. Available at: (GoDaddy, 2024) https://www.godaddy.com/en-ph/hosting/web-hosting
-Lethole, L., 2025. Food1. 
-Lethole, L., 2025. Food2. 
-Lethole, L., 2025. Food3. 
-Lethole, L., 2025. Food4. 
-Lethole, L., 2025. Food5. 
-Lethole, L., 2025. Food6. 
-Lethole, L., 2025. Food7.
-Lethole, L., 2025. MenuImageRoungh.
-hw project. (n.d.). Canva. Canva. Retrieved September 29, 2025, from https://www.canva.com/s/templates?query=menu&adj=eyJEIjp7IkEiOiJDbGFzc3kiLCJCIjoiU1RZTEVfQ0xBU1NZIn19
-![Uploading WEDE Sitemap.png…]()
+- GoDaddy (2024). Web Hosting | Lightning Fast Hosting & One Click Setup - GoDaddy PH. [online] GoDaddy. Available at: https://www.godaddy.com/en-ph/hosting/web-hosting [Accessed 3 Nov. 2025].
+- Lethole, L., 2025. Food1. Cape Town: Portfolio 
+- Lethole, L., 2025. Food2. Cape Town: Portfolio
+- Lethole, L., 2025. Food3. Cape Town: Portfolio
+- Lethole, L., 2025. Food4. Cape Town: Portfolio
+- Lethole, L., 2025. Food5. Cape Town: Portfolio
+- Lethole, L., 2025. Food6. Cape Town: Portfolio
+- Lethole, L., 2025. Food7. Cape Town: Portfolio
+- Lethole, L., 2025. MenuImageRough. Cape Town: Portfolio
+- Canva. (2025). Canva. [online] Available at: https://www.canva.com/s/templates?query=menu&adj=eyJEIjp7IkEiOiJDbGFzc3kiLCJCIjoiU1RZTEVfQ0xBU1NZIn19 [Accessed 3 Nov. 2025].
+- ![Uploading WEDE Sitemap.png…]()
